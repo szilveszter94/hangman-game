@@ -16,6 +16,8 @@ class HangmanGame:
         self.is_winning = False
 
     def start_game(self, category):
+        self.guessed_list = []
+        self.is_winning = False
         self.chosen_word = self.repository.get_random_word_by_category(category)
         self.guessed_word = ''.join("_" if char in VALID_CHARS else char for char in self.chosen_word)
 
